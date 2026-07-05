@@ -111,6 +111,16 @@
       color: var(--text);
     }
     .nav-btn:hover { transform: scale(1.1); }
+
+    .lang-btn {
+      width: auto;
+      padding: 0 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
     .nav-toggle {
       display: none;
       background: none;
@@ -206,7 +216,7 @@
         </div>
       </div>
       <div class="nav-right">
-        <button class="nav-btn" id="langToggle" title="Cambiar idioma">ENG</button>
+        <button class="nav-btn lang-btn" id="langToggle" title="Cambiar idioma">EN</button>
         <button class="nav-btn" id="themeToggle" title="Cambiar modo">🌙</button>
         <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
       </div>
@@ -453,7 +463,7 @@
     function applyLang(lang) {
       currentLang = lang;
       html.lang = lang === 'es' ? 'es' : 'en';
-      langToggle.textContent = lang === 'es' ? '🇪🇳' : '🇪🇸';
+      langToggle.textContent = lang === 'es' ? 'EN' : 'ES';
       document.querySelectorAll('[data-t]').forEach(el => {
         const key = el.getAttribute('data-t');
         if (translations[lang][key]) el.textContent = translations[lang][key];
